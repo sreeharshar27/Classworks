@@ -25,6 +25,7 @@ public class HasMapDemo {
 		
 		
 		//using entry set
+		//Map.Entry is an inner interface in Map. Used to represent an entry(key-value pair) in Map.
 		Set<Map.Entry<Integer,String>> entries = hm.entrySet();
 		for(Map.Entry<Integer, String> entry: entries) {
 			System.out.println(entry.getKey() + "==" + entry.getValue());
