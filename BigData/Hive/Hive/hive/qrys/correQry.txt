@@ -1,0 +1,3 @@
+with r1 as (select avg(salary) as avg_sal, deptname  from emps group by deptname)
+select empid,empname,job,salary, round(avg_sal) as avgSal from emps as e , r1
+where r1.deptname=e.deptname and e.salary > r1.avg_sal;  

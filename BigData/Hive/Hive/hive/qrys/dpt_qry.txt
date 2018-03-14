@@ -1,0 +1,21 @@
+drop table if exists dept_emps;
+create table dept_emps  as
+with pur as 
+(select empid,empname  from emps
+where deptname='Purchase'),
+sales as 
+(select empid,cast(salary as String)  from emps
+where deptname='Sales'),
+Prod as
+(select empid,job  from emps
+where deptname='Production'),
+acc as
+(select empid,deptname  from emps
+where deptname='Accounts')
+select * from pur union all 
+select * from sales union all 
+select * from Prod union all
+select *  from acc;
+
+
+

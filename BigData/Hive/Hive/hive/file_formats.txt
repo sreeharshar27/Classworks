@@ -1,0 +1,4 @@
+ORC -> Optimized Row Columnar
+RCFile --> Record Columnar File
+TEXTFILE
+SEQUENCEFILE,

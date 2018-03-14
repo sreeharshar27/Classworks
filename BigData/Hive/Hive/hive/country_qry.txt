@@ -1,0 +1,1 @@
+select continent, country_name, capital,country_code,currency_code,life_expectancy from employees.countries;

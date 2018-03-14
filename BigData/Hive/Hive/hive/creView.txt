@@ -1,0 +1,13 @@
+drop view if exists developer_skills;
+
+create view developer_skills as
+select name, 
+coalesce(concat('DB_',cast(skills_score['DB'] as String)),'') as db,
+coalesce(concat('Python_',cast(skills_score['Python'] as String)),'') as python,
+coalesce(concat('Oracle_',cast(skills_score['Oracle'] as String)),'') as oracle,
+coalesce(concat('Java_',cast(skills_score['Java'] as String)),'') as java,
+coalesce(concat('Sales_',cast(skills_score['Sales'] as String)),'') as sales,
+coalesce(concat('OpenERP_',cast(skills_score['OpenERP'] as String)),'') as openERP,
+coalesce(concat('Javafx_',cast(skills_score['JavaFx'] as String)),'') as javafx,
+coalesce(concat('Jee_',cast(skills_score['JEE'] as String)),'') as Jee,
+experience from developers;

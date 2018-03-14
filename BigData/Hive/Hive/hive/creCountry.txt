@@ -1,0 +1,8 @@
+drop table if exists countries;
+
+create table countries(country String,country_code String,continent String,capital String,population bigint,Government_form String,currency String,currency_code String,dialing_prefix String,birth_rate decimal(6,2),death_rate decimal(6,2),life_expectancy decimal(6,2)) 
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+WITH SERDEPROPERTIES('separatorChar'=',')
+STORED AS TEXTFILE
+TBLPROPERTIES('skip.header.line.count'='1');
+
