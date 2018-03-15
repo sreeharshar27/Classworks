@@ -1,0 +1,2 @@
+select skill,score  from developers
+lateral view explode(skills_score) dummy_table as skill,score; 

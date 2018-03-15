@@ -1,0 +1,25 @@
+drop table if exists stu_temp;
+create table  stu_temp(stuid int, stuname String, course String, grp String, age int, year_of_study int,address String);    
+ 
+
+insert into stu_temp values(240,'Sandeep','B.Sc','M.P.C',19,1,'Tambaram');
+
+insert into stu_temp values(160,'Mrudula','B.A','M.E.C',19,1,'Perambur');
+insert into stu_temp values(210,'Kosal Ram','B.Sc','M.P.C',22,3,'MeenamBakkam');
+insert into stu_temp values(230,'Muthu Kumar','B.Com','Company Law',19,1,'Chromepet');
+insert into stu_temp values(130,'Tamil Selvan','B.Sc','M.P.C',21,2,'Guindy');
+insert into stu_temp values(160,'Kodand Ramar','B.C.A','JEE',19,1,'Mambalam');
+insert into stu_temp values(340,'Gambhir','B.Sc','B.P.C',20,1,'Tambaram');
+insert into stu_temp values(320,'Saroja','B.A','M.E.C',21,2,'Guduvanchery');
+insert into stu_temp values(422,'Sandhya','B.B.A','General',19,1,'Tambaram');
+insert into stu_temp values(244,'Komal Kumar','B.Sc','M.P.C',719,1,'Chromepet');
+insert into stu_temp values(131,'Sachin','B.Sc','M.P.C',22,3,'Pallavaram');
+insert into stu_temp values(143,'Sateesh','B.C.A','MainFrames',19,1,'Tambaram');
+insert into stu_temp values(187,'KedarNathan','B.Sc','M.P.C',21,2,'Pallavaram');
+insert into stu_temp values(123,'Kesavan','B.Com','Company Law',19,1,'Tambaram');
+insert into stu_temp values(154,'Badirinath','B.Sc','B.P.C',19,1,'Chromepet');
+insert into stu_temp values(189,'Santosh','B.B.A','General',24,3,'Nungambakkam');
+insert into stu_temp values(196,'Vamanan','B.Sc','M.P.C',19,1,'Tambaram');
+insert into stu_temp values(243,'Vinod','B.Com','Cost Accounts',21,1,'GuiNdy');
+insert into stu_temp values(312,'Karuppa Samy','B.Sc','M.P.C',19,1,'Tambaram');
+insert into stu_temp values(212,'Velayudham','B.Com','Cost Accounts',21,2,'Chromepet');

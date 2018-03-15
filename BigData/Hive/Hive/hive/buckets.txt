@@ -1,0 +1,9 @@
+drop table if exists  web_pages;
+CREATE TABLE web_pages(viewName String, designer String,
+     page_url STRING,dev_system STRING COMMENT 'IP Address of the User')
+ COMMENT 'This is the page view table'
+ PARTITIONED BY(company STRING) 
+ clustered by (designer) SORTED BY (viewName) INTO 12 BUCKETS
+ ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+   LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;

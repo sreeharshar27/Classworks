@@ -1,0 +1,9 @@
+create table developers(name String,
+work_place  STRUCT<city:String, state:String>,
+sex_age STRUCT<sex:String,age:int>,
+skills_score  Map<String,int>,
+depart_title Map<String,Array<String>>,
+experience int)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '|'
+COLLECTION ITEMS TERMINATED BY ','
+MAP KEYS TERMINATED BY ':';

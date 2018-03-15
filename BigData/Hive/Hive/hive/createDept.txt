@@ -1,0 +1,7 @@
+drop table if exists dept;
+
+create table dept(deptname String,location String, manpower int, manager String, dt_of_join date) 
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\,' 
+LINES TERMINATED BY '\n'
+stored as textfile;
+

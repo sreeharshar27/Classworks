@@ -1,0 +1,8 @@
+Madhavan|Madurai,Tamilnadu|Male,26|DB:80|Product:Developer_Lead|3
+Sayooz|Calicut,Kerala|Male,22|Python:85|Product:Lead,Test:Lead|2
+Shamitha|KanyaKumari,Tamilnadu|Female,23|Java:85|Test:Lead,COE:Architect|4
+Sandoz|Nellore,Andhra Pradesh|Male,57|Sales:89,HR:94|Sales:Lead|5
+Kesavan|Salem,Tamilnadu|Male,24|Oracle:75|Product:Sr Developer|3
+Anish|Cochin,Kerala|Male,40|OpenERP:85|Product:Faculty Lead,Test:Lead|2
+Manasa|Ongole,Andhra Pradesh|Female,23|JavaFx:85|Product:Lead,COE:Architect|4
+Sanjay Mathur|Jaipur,Rajashthan|Male,29|JEE:89,HR:84|Product:Lead|5

@@ -1,0 +1,7 @@
+Create Table As Select (CTAS)
+Tables can also be created and populated by the results of a query in one create-table-as-select (CTAS) statement. The table created by CTAS is atomic, meaning that the table is not seen by other users until all the query results are populated. So other users will either see the table with the complete results of the query or will not see the table at all.
+There are two parts in CTAS, the SELECT part can be any SELECT statement supported by HiveQL. The CREATE part of the CTAS takes the resulting schema from the SELECT part and creates the target table with other table properties such as the SerDe and storage format.
+CTAS has these restrictions:
+The target table cannot be a partitioned table.
+The target table cannot be an external table.
+The target table cannot be a list bucketing table.

@@ -1,0 +1,146 @@
+Create an Employee Table in MYSQL environment with the following columns
+
+ employeeID
+ employeeName
+ employeeSalary
+ employeeDOB
+ employeeDeptId
+ emailID
+ lastUpdated ( timestamp value ) 
+
+Prepare atleast 20 rows , out of which emial id has NULL values for atleast 5 rows , 
+The possible values for employeeDeptId ranges from d0001 to d0005 
+
+
+
+1) Import the table to HDFS ( default location ) 
+sqoop import --connect jdbc:mysql://localhost/mysql --username root --password root --table Employee
+
+2) Verify the imported data in HDFS
+hadoop fs -cat /user/srilakshmig/Employee/part-m-00000
+
+
+3) Specify a target directory while importing the table to HDFS
+sqoop import --connect jdbc:mysql://localhost/mysql --username root --password root 
+--table   Employee  --target-dir /myresult_Emp
+
+4) Verify the imported data in HDFS
+hadoop fs -cat /myresult_Emp/part-m-00000 
+
+5) Import the employee rows whose employeeDeptId is 'd0005' into a specified directory
+sqoop import --connect jdbc:mysql://localhost/mysql --username root --password root --table Employee --where "employeeDeptId = 'd0005'"
+
+6) How do you protect your password during the import command 
+sqoop import --connect jdbc:mysql://localhost/mysql --username root --table Employee -P
+7) Explore incremental import ( after inserting few rows to employee Table ) 
+sqoop import --connect jdbc:mysql://localhost/mysql --username root --password root --table 	Employee --incremental append --check-column employeeID --last-value 10020 
+
+8) Explore incremental import ( after updating rows of a table Table ) 
+sqoop import --connect jdbc:mysql://localhost/mysql --username root --password root --table 	Employee --incremental lastmodified  --check-column employeeSalary --last-value 
+
+9) Create Department table with the following columns 
+   departmentId 
+   departmentName
+   departmentStrength
+   companyId
+
+
+10) Create a table Company with the following columns 
+   companyId
+   companyName
+   companyStartDate
+   location   
+
+11) Experiment IMPORT-ALL-TABLES command to to import all the table from the RDBMS server 
+sqoop import-all-tables --connect jdbc:mysql://localhost/mysql --username root --password root
+
+12) Prepare Skills file in HDFS with following layout 
+   skillID , SkillName , Status 
+
+   prepare data for the above layout
+
+13) Create Skills table in MYSQL environment with the following columns 
+   skillID , SkillName , Status 
+
+14) Export the data from HDFS to MYSQL RDBMS
+sqoop export --connect jdbc:mysql://localhost/mysql --username root --password root --table 	skills --export-dir /user/srilakshmig/skills
+
+
+15) Explain a situation where you need to do override type mapping 
+Whenever we have to map the incoming column types to the native SQL/HIVE types.
+
+16) How do you handle null values during import operation 
+sqoop import --connect jdbc:mysql://localhost/mysql --username root --password root --table Employee --input-null-string '\\N' --split-by employeeID  --target-dir /NullData
+
+
+17) Free form query import 
+    How do you retrieve data from 2 tables ?
+    employeeName || departmentName
+sqoop import --connect jdbc:mysql://localhost/mysql --username root --password root --query 	'SELECT Employee.employeeName, department.departmentName FROM Employee JOIN Department USING (departmentId) WHERE $CONDITIONS' --split-by employee.employeeName --target-dir /JoinData
+
+
+18) what are the advantages of " Exporting with All-or-Nothing Semantics " option  
+So that a staging table is created and duplication can be minimized.
+
+19) How do you update an exixting dataset ?
+sqoop export --connect jdbc:mysql://localhost/mysql \
+--username root \
+--password root \
+--table employee \
+--update-mode updateonly \
+--update-key employeeID \
+--export-dir /updateRows \
+--input-fields-terminated-by ',';
+
+20) How do you use stored proceure in export statement ?
+sqoop export \
+--connect  jdbc:mysql://localhost/mysql  \
+--call sp_demo \
+--export-dir /sp_call
+
+21) How do you export subset of columns in a database from HDFS 
+
+sqoop export --connect jdbc:mysql://localhost/mysql --username root --password root --table employee --columns employeeId,employeeName --export-dir /user/srilakshmig/subset/
+
+
+22) How do you import data from Sqoop to HIVE environment ?
+
+sqoop import --connect jdbc:mysql://localhost/mysql \
+--username root \
+-P \
+--split-by employeeId \
+--columns employeeId, employeeName \ 
+--table employee  
+--target-dir /user/srilakshmig/Employee \
+--fields-terminated-by "," 
+--hive-import 
+--create-hive-table 
+--hive-table hive.employee
+
+23) How do you control parallelism (Increase the number of mappers)?
+sqoop import   
+--connect jdbc:mysql://localhost/mysql
+--username root   
+--password root   
+--table employees
+--num-mappers 5
+
+
+24) How do you speed up transfers while importing tables?
+sqoop import --connect jdbc:mysql://localhost/mysql --username root --password root --table employee –direct
+
+
+25) How do you export data in batches ?
+
+sqoop export --connect jdbc:mysql://localhost/mysql --username root --password root --table employees --export-dir /user/srilakshmig/employee –batch 
+
+
+
+
+
+                              
+
+   
+
+    
+

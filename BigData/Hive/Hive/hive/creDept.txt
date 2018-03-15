@@ -1,0 +1,5 @@
+create table dept(deptname String,location String, strength int, head String, dt_of_join date)
+
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;

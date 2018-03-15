@@ -1,0 +1,6 @@
+create external table capitals(city String,country String,country_code String,population bigint,latitude decimal(10,6),longitude decimal(10,6))
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\;' 
+LINES TERMINATED BY '\n' 
+ STORED AS TEXTFILE
+LOCATION '/home/rajendra/tmp/capitals'
+TBLPROPERTIES('skip.header.line.count'='1') ;
